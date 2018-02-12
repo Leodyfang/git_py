@@ -1,0 +1,3 @@
+Social networking 
+concerned with the conduction of various social behaviors 
+over the internet, as well as the underlying technologies. It is an interdisciplinary subject involving multiple fields including computer networks and applications, psychology, as well as sociology. This course provides a holistic overview on both technology and humanity aspects of social networks, with emphasis on the social sciences aspects and perspectives. It covers topics such as social network analysis, network-mediated knowledge building and collaboration, epistemology in social networks, and applications of social network

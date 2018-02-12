@@ -4,7 +4,7 @@ import socket
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # connect to the server (change localhost to an IP address if necessary)
-soc.connect(("localhost", 50001))
+soc.connect(("localhost", 55703))
 
 # Send a message to the server
 msg = "Hello Server!".encode("utf-8")

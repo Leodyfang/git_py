@@ -16,21 +16,21 @@ async def compute_square(x):
 # loop.run_until_complete(asyncio.wait(tasks))
 # loop.close()
 #2
-# tasks = []
-# for i in [4, 5, 6, 7]:
-#     tasks.append(asyncio.ensure_future(compute_square(i)))
-# loop = asyncio.get_event_loop()
-# results, _ = loop.run_until_complete(
-#     asyncio.wait(tasks))
-# loop.close()
-# for f in results:
-#     print(f.result())
-#3
-coros = [compute_square(i) for i in range(5)]
+tasks = []
+for i in [4, 5, 6, 7]:
+    tasks.append(asyncio.ensure_future(compute_square(i)))
 loop = asyncio.get_event_loop()
-all_futures = asyncio.gather(*coros)
-results = loop.run_until_complete(all_futures)
+results, _ = loop.run_until_complete(
+    asyncio.wait(tasks))
 loop.close()
-print (results)
 for f in results:
-    print(f)
+    print(f.result())
+#3
+# coros = [compute_square(i) for i in range(5)]
+# loop = asyncio.get_event_loop()
+# all_futures = asyncio.gather(*coros)
+# results = loop.run_until_complete(all_futures)
+# loop.close()
+# print (results)
+# for f in results:
+#     print(f)

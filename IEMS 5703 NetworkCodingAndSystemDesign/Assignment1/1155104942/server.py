@@ -11,7 +11,7 @@ port = int(sys.argv[1])    #qa port is a num
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)   #TCP KEEP ALIVE qa
 # bind the socket to the host and a port
-server_socket.bind(("localhost", port))
+server_socket.bind(("localhost", port))  # ()tuple!!!
 print("Listening for incoming connections on port {}".format(port))
 # Listen for incoming connections from clients
 server_socket.listen(10)
@@ -43,9 +43,9 @@ while True:
     #POS tag
     tokens = nltk.word_tokenize(content)
     tagged = nltk.pos_tag(tokens)
-    # print(tagged)
+    print(tagged)
     sendit = json.dumps(tagged)
-    # print(sendit)
+    print(sendit)
     # sendit = json.loads(sendit)
     # print(sendit)
     # sendit = json.dumps(sendit)

@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
-import time, functools
+import time
+import functools
+
+
 def log(k):
-    if isinstance(k,str):
+    if isinstance(k, str):
         def log2(fn):
             @functools.wraps(fn)
             def wrapper(*args, **kw):
@@ -9,7 +12,7 @@ def log(k):
                 return fn(*args, **kw)
             return wrapper
         return log2
-        
+
     else:
         @functools.wraps(k)
         def wrapper(*args, **kw):
@@ -17,10 +20,12 @@ def log(k):
             return k
         return wrapper
 
+
 @log("execute")
 def fast(x, y):
     time.sleep(0.0012)
-    return x + y;
+    return x + y
+
 
 f = fast(11, 22)
 print('{}'.format(fast.__name__))
